@@ -283,6 +283,101 @@ sudo systemctl status squid
 - Use only authorized systems and test environments.
 - Some experiments require internet access.
 - MobSF requires Docker to be running.
+
+
+  # 🔧 VirtualBox Virtualization Enabled but Not Working – Fix Guide
+
+## 📌 Problem
+
+Virtualization is enabled in BIOS, but VirtualBox still shows errors or fails to start Kali Linux VM.
+
+---
+
+# ✅ Solution 1 – Disable Hyper-V
+
+Open Command Prompt as Administrator and run:
+
+```cmd
+bcdedit /set hypervisorlaunchtype off
+```
+
+Restart the system after running the command.
+
+---
+
+# ✅ Solution 2 – Disable Windows Hypervisor Features
+
+Go to:
+
+```text
+Control Panel → Programs → Turn Windows features on or off
+```
+
+Disable the following:
+- Hyper-V
+- Windows Hypervisor Platform
+- Virtual Machine Platform
+- Windows Sandbox
+
+Restart the system.
+
+---
+
+# ✅ Solution 3 – Verify Virtualization
+
+Open:
+
+```text
+Task Manager → Performance → CPU
+```
+
+Check:
+
+```text
+Virtualization: Enabled
+```
+
+---
+
+# ✅ Solution 4 – VirtualBox Settings
+
+## System Settings
+- Enable PAE/NX
+
+## Display Settings
+- Video Memory → 128 MB
+- Enable 3D Acceleration
+
+---
+
+# ✅ Solution 5 – Use Older VirtualBox Version
+
+Sometimes older versions work better on restricted systems.
+
+Download:
+
+https://www.virtualbox.org/wiki/Download_Old_Builds_6_1
+
+---
+
+# ⚠️ Alternative Options
+
+If VirtualBox still does not work:
+- Kali Live USB
+- WSL (Windows Subsystem for Linux)
+
+---
+
+# 🔍 Observation
+
+- Hyper-V conflicts with VirtualBox virtualization
+- Disabling Windows hypervisor features fixes most issues
+
+---
+
+# ✅ Result
+
+Successfully resolved VirtualBox virtualization issues and enabled Kali Linux virtual machine execution.
 - Nessus uses port `8834`.
 - OWASP ZAP is used only for educational/testing purposes.
 
