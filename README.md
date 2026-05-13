@@ -45,25 +45,25 @@ sudo systemctl start docker
 ## Download MobSF
 
 ```bash
-docker pull opensecurity/mobile-security-framework-mobsf:latest
+sudo docker pull opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 ## Run MobSF
 
 ```bash
-docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf
+sudo docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf
 ```
 
 ## Check Running Containers
 
 ```bash
-docker ps
+sudo docker ps
 ```
 
 ## Stop Running Containers
 
 ```bash
-docker stop $(docker ps -q)
+sudo docker stop $(docker ps -q)
 ```
 
 ---
