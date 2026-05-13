@@ -64,6 +64,7 @@ sudo docker ps
 
 ```bash
 sudo docker stop $(docker ps -q)
+
 ```
 
 ---
@@ -71,6 +72,9 @@ sudo docker stop $(docker ps -q)
  4 
 
 ## Go to Downloads Folder
+```bash
+https://www.tenable.com/downloads/nessus?utm_source=chatgpt.com&loginAttempted=true
+```
 
 ```bash
 cd ~/Downloads
@@ -112,6 +116,9 @@ sudo systemctl status nessusd
 
 ## Menu Navigation
 
+```bash
+https://www.exterro.com/digital-forensics-software/ftk-imager?utm_source=chatgpt.com
+```
 ```text
 File → Create Disk Image
 ```
@@ -129,6 +136,9 @@ Select Image Type → Raw (dd)
 6 
 
 ## Steps
+```bash
+https://download.cnet.com/saft/3000-2653_4-75878117.html
+```
 
 ```text
 Connect Android Device
@@ -167,10 +177,91 @@ zaproxy
 ```text
 Analyze → Spider
 ```
-
+```bash
+http://demo.testfire.net
+```
 ```text
 Analyze → Active Scan
 ```
+# 8 
+
+## Update System
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+---
+
+## Install Required Packages
+
+```bash
+sudo apt install iptables squid -y
+```
+
+---
+
+## Check Existing Firewall Rules
+
+```bash
+sudo iptables -L
+```
+
+---
+
+## Block HTTPS Traffic (Port 443)
+
+```bash
+sudo iptables -A INPUT -p tcp --dport 443 -j DROP
+```
+
+---
+
+## Block Specific IP Address
+
+```bash
+sudo iptables -A INPUT -s 192.168.1.10 -j DROP
+```
+
+---
+
+## Allow SSH Traffic
+
+```bash
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+```
+
+---
+
+## Start Squid Service
+
+```bash
+sudo systemctl start squid
+```
+
+---
+
+## Enable Squid Service
+
+```bash
+sudo systemctl enable squid
+```
+
+---
+
+## Check Squid Status
+
+```bash
+sudo systemctl status squid
+```
+
+---
+
+# 🔹 Tools Used
+
+- Kali Linux
+- iptables
+- Squid
 
 ---
 
